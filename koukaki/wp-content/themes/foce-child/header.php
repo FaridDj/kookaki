@@ -32,6 +32,11 @@
                 <span class="line"></span>
                 <span class="line"></span>
             </button>
+            <div class="modal__content">
+            <img class="modal__content--logo" src="<?php echo get_theme_file_uri() . 'dist/assets/images/logo.png'; ?>"
+              alt="">
+            <ul>
+
             <ul>
                 <li><a href="#story">Histoire</a></li>
                 <li><a href="#characters">Personnages</a></li>

@@ -24,3 +24,45 @@
     /* Rotation complète */
   }
 }
+/*animation du titre H2*/
+.FadeH2 {
+  position: relative;
+  z-index: 1;
+  animation: FadeH2 2s ease-in-out 1s alternate;
+  animation-delay: 1s;
+  animation-fill-mode: forwards; /*garanti le dernier etat de l animation*/
+}
+
+@keyframes FadeH2 {
+  0% {
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* video avec logo */
+
+.banner {
+  background-image: none;
+  display: inline-block;
+  position: relative;
+}
+
+.banner__video {
+  z-index: 1;
+  margin-top: 0;
+  width: 100%;
+}
+
+.logo-img {
+  position: absolute;
+  z-index: 2;
+  bottom: 30%;
+  width: 100%;
+  left: 25%;
+}
