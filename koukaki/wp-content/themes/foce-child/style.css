@@ -66,3 +66,34 @@
   width: 100%;
   left: 25%;
 }
+
+/*slider*/
+
+.story #characters {
+  margin: 6em;
+
+  text-align: center;
+  display: block !important;
+}
+
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.story #place {
+  background-image: url("images/Studio_Koukaki-image_place.png");
+}

@@ -12,11 +12,12 @@
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+  
 	<?php wp_head(); ?>
 </head>
 
@@ -32,10 +33,7 @@
                 <span class="line"></span>
                 <span class="line"></span>
             </button>
-            <div class="modal__content">
-            <img class="modal__content--logo" src="<?php echo get_theme_file_uri() . 'dist/assets/images/logo.png'; ?>"
-              alt="">
-            <ul>
+            
 
             <ul>
                 <li><a href="#story">Histoire</a></li>

@@ -29,32 +29,31 @@ get_header();
             $characters_query = new WP_Query($args);
             
             ?>
+            <!-- gestion du slider -->
+
             <article id="characters">
-                <div class="main-character">
-                    <h3>Les personnages</h3>
-                    <?php
-                    $main_character = $characters_query->posts[0];
+  <h3><span class="characters_title ">Les personnages</span></h3>
+  
+  <div class="swiper-container">
+  
+    <div class="swiper-wrapper">
+      <?php
+            while ( $characters_query->have_posts() ) {
+                $characters_query->the_post();
+                    echo '<div class="swiper-slide">';
                     echo '<figure>';
-                    echo get_the_post_thumbnail( $main_character->ID, 'full' );
-                    echo '<figcaption>'. $main_character->post_title . '</figcaption>';
+                    echo get_the_post_thumbnail( get_the_ID(), 'full' );
+                    echo '<figcaption>';
+                    the_title();
+                    echo'</figcaption>';
                     echo '</figure>';
-                    $characters_query->next_post();
-                    ?>
+                    echo '</div>';
+            };
+            ?>
                 </div>
-                <div class="other-characters">
-                    <?php
-                    while ( $characters_query->have_posts() ) {
-                        $characters_query->the_post();
-                        echo '<figure>';
-                        echo get_the_post_thumbnail( get_the_ID(), 'full' );
-                        echo '<figcaption>';
-                        the_title();
-                        echo'</figcaption>';
-                        echo '</figure>';
-                    }
-                    ?>
-                </div>
-            </article>
+  </div>
+</article>
+            
             <article id="place">
                 <div>
                     <h3>Le Lieu</h3>
@@ -72,7 +71,15 @@ get_header();
                 <p>Avec une créativité et une capacité d’innovation mondialement reconnues, une expertise éditoriale et commerciale à la pointe de son industrie, le Studio Koukaki se positionne comme un acteur incontournable dans un marché en forte croissance. Koukaki construit chaque année de véritables succès et capitalise sur de puissantes marques historiques. Cette année, il vous présente “Fleurs d’oranger et chats errants”.</p>
             </div>
 		</section>
-    </main><!-- #main -->
 
+        <!-- image ceremonie des Oscars -->
+
+        <section class="Oscar-img">
+        <img  src="<?php echo get_stylesheet_directory_uri() . '/images/Les personnages.png'; ?> " alt="Studio Koukaki-Nomination aux Oscars">            
+        </section>
+        
+    
+    </main><!-- #main -->
+      
 <?php
 get_footer();
