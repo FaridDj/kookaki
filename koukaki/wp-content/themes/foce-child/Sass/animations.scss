@@ -1,0 +1,155 @@
+/*animation du titre H2*/
+.FadeH2 {
+  position: relative;
+  z-index: 1;
+  animation: FadeH2 2s ease-in-out 1s alternate;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes FadeH2 {
+  0% {
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* video avec logo */
+
+.banner {
+  background-image: none;
+  display: inline-block;
+  position: relative;
+}
+
+.banner__video {
+  z-index: 1;
+  margin-top: 0;
+  width: 100%;
+}
+
+.logo-img {
+  position: absolute;
+  z-index: 2;
+  bottom: 30%;
+  width: 100%;
+  left: 25%;
+  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
+}
+.move-up {
+  animation: move-up 2s 300ms both;
+}
+
+/* Float elements */
+@keyframes float {
+  0% {
+    transform: translate3d(6px, 6px, 0);
+  }
+  12% {
+    transform: translate3d(0px, 6px, 0);
+  }
+  24% {
+    transform: translate3d(6px, -4px, 0);
+  }
+  36% {
+    transform: translate3d(6px, 0px, 0);
+  }
+  48% {
+    transform: translate3d(-4px, -6px, 0);
+  }
+  60% {
+    transform: translate3d(0px, -4px, 0);
+  }
+  72% {
+    transform: translate3d(-8px, 6px, 0);
+  }
+  84% {
+    transform: translate3d(-4px, 0px, 0);
+  }
+  100% {
+    transform: translate3d(6px, 6px, 0);
+  }
+}
+/* Opacity move-up */
+@keyframes move-up {
+  0% {
+    transform: translateY(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/*slider*/
+
+.story #characters {
+  margin: 6em;
+
+  text-align: center;
+  display: block !important;
+}
+
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+/* gestion de nuqge*/
+.story #place {
+  position: relative;
+  background-image: url("../images/Studio_Koukaki-image_place.png");
+}
+
+#place .big_cloud {
+  height: 122px;
+  top: 70px;
+  right: 90px;
+  transform: translateX(var(--posX));
+}
+
+#place .little_cloud {
+  height: 55px;
+  top: 250px;
+  right: 500px;
+  transform: translateX(var(--posX));
+}
+#place .big_cloud,
+#place .little_cloud {
+  position: absolute;
+  filter: blur(12px);
+  -webkit-filter: blur(12px);
+  -moz-filter: blur(12px);
+  z-index: 2;
+}
+
+#place .big_cloud {
+  height: 122px;
+  top: 70px;
+  right: 90px;
+  transform: translateX(var(--posX));
+}
+
+#place .little_cloud {
+  height: 55px;
+  top: 250px;
+  right: 500px;
+  transform: translateX(var(--posX));
+}

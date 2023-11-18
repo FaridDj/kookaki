@@ -8,92 +8,15 @@
  Version: 0.1
  */
 
-/* rotation fleurs*/
+/* rotation fleurs non stop*/
 .story__article::after {
   animation: rotate-flowers 20s infinite linear;
-  /* Ajoute l'animation de rotation non stop */
 }
 @keyframes rotate-flowers {
   from {
     transform: rotate(0deg);
-    /* Rotation de départ */
   }
-
   to {
     transform: rotate(360deg);
-    /* Rotation complète */
   }
-}
-/*animation du titre H2*/
-.FadeH2 {
-  position: relative;
-  z-index: 1;
-  animation: FadeH2 2s ease-in-out 1s alternate;
-  animation-delay: 1s;
-  animation-fill-mode: forwards; /*garanti le dernier etat de l animation*/
-}
-
-@keyframes FadeH2 {
-  0% {
-    transform: translate3d(0, 100%, 0);
-    opacity: 0;
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-/* video avec logo */
-
-.banner {
-  background-image: none;
-  display: inline-block;
-  position: relative;
-}
-
-.banner__video {
-  z-index: 1;
-  margin-top: 0;
-  width: 100%;
-}
-
-.logo-img {
-  position: absolute;
-  z-index: 2;
-  bottom: 30%;
-  width: 100%;
-  left: 25%;
-}
-
-/*slider*/
-
-.story #characters {
-  margin: 6em;
-
-  text-align: center;
-  display: block !important;
-}
-
-.swiper-container {
-  width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 300px;
-  height: 300px;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-}
-
-.story #place {
-  background-image: url("images/Studio_Koukaki-image_place.png");
 }

@@ -60,6 +60,15 @@ get_header();
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
 
+ <!-- Mise en place des nuage -->
+ <img class="big_cloud" src="<?php echo get_theme_file_uri() . '/images/big_cloud.png'; ?>"
+        alt="Gros nuage qui passe">
+      <img class="little_cloud"
+        src="<?php echo get_theme_file_uri() . '/images/little_cloud.png'; ?>"
+         alt="Petit nuage qui passe">
+      <!-- =================== -->
+
+
             </article>
         </section>
 
