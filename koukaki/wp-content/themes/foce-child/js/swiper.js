@@ -10,7 +10,10 @@ var swiper = new Swiper(".swiper-container", {
     modifier: 1,
     slideShadows: true,
   },
-  pagination: {
-    el: ".swiper-pagination",
+  direction: "horizontal",
+  loop: true,
+  autoplay: {
+    delay: 0, // Délai entre chaque diapositive en millisecondes (3 secondes dans cet exemple)
   },
+  speed: 2000,
 });

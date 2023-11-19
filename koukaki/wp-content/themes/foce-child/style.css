@@ -9,10 +9,20 @@
  */
 
 /* rotation fleurs non stop*/
-.story__article::after {
-  animation: rotate-flowers 20s infinite linear;
+
+.story__article::after,
+#studio h2::before,
+.story h2::after,
+#studio h2::after,
+.site-footer::before,
+.site-footer::after,
+.nomination::before,
+.nomination::after,
+.site-footer ul::after,
+.modal ::after {
+  animation: rotate-flower var(--rotate) linear infinite;
 }
-@keyframes rotate-flowers {
+@keyframes rotate-flower {
   from {
     transform: rotate(0deg);
   }

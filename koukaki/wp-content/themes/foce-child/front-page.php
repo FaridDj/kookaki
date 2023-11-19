@@ -18,6 +18,7 @@ get_header();
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
+            
             <?php
             $args = array(
                 'post_type' => 'characters',
