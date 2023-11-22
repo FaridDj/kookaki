@@ -10,6 +10,9 @@ get_header();
                
             <video class="banner__video" width="1440" autoplay="autoplay" muted="" loop="infinite">
       <source src="<?php echo get_stylesheet_directory_uri() . '/video/Studio+Koukaki-vidéo+header+sans+son.mp4'; ?> " type="video/mp4">
+      
+      <img class="banner__logo" src="images/logo.png" alt="Logo fleurs d'oranger &amp; chats errants">
+
     </video>
 
         </section>
@@ -84,10 +87,12 @@ get_header();
 
         <!-- image ceremonie des Oscars -->
 
-        <section class="Oscar-img">
-        <img  src="<?php echo get_stylesheet_directory_uri() . '/images/Les personnages.png'; ?> " alt="Studio Koukaki-Nomination aux Oscars">            
-        </section>
-        
+    <section id="Oscar" class="Oscar">
+            <div class="Oscar-img">
+            <img src="<?php echo get_theme_file_uri() . '/images/Les personnages.png'; ?>" alt="Nomination aux Oscars 2022" ">
+           
+            </div>
+    </section>
     
     </main><!-- #main -->
       

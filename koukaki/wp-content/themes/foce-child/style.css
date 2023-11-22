@@ -4,24 +4,29 @@
  Author: Studio Koukaki
  Author URI: https://www.koukaki.local
  Template: foce
- Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Description: Thème enfant à l'ocasion de la Oscar aux Oscars Shorts
  Version: 0.1
  */
 
-/* rotation fleurs non stop*/
+:root {
+  --rotate: 15s;
+}
 
+/* rotation fleurs non stop*/
 .story__article::after,
+#studio h2::after,
 #studio h2::before,
 .story h2::after,
-#studio h2::after,
 .site-footer::before,
 .site-footer::after,
-.nomination::before,
-.nomination::after,
+.Oscar::before,
+.Oscar::after,
 .site-footer ul::after,
 .modal ::after {
-  animation: rotate-flower var(--rotate) linear infinite;
+  animation: move-up 3s 300ms both,
+    rotate-flower var(--rotate) 300ms linear infinite;
 }
+
 @keyframes rotate-flower {
   from {
     transform: rotate(0deg);

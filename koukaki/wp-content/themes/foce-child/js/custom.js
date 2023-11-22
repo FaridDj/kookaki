@@ -1,3 +1,6 @@
+let posX = 0;
+let mouveCloud = false;
+
 const root = document.documentElement;
 
 window.addEventListener("scroll", () => {

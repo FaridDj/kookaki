@@ -30,16 +30,29 @@
     transform: translate3d(6px, 6px, 0);
   }
 }
+
 /*---Arrive des elements------*/
 @keyframes move-up {
   0% {
-    transform: translateY(600px);
+    transform: translateY(300px);
     opacity: 0;
   }
   100% {
     transform: translateY(0);
   }
 }
+
+@keyframes move-down {
+  0% {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
 /* Animation du titre H2*/
 @keyframes FadeH2 {
   0% {
@@ -67,15 +80,16 @@
     z-index: 1;
     margin-top: 0;
     width: 100%;
+    animation: move-down 2s 300ms both;
   }
-  & .logo-img {
-    position: absolute;
-    z-index: 2;
-    bottom: 30%;
-    width: 50%;
-    left: 25%;
-    animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
-  }
+}
+& .logo-img {
+  position: absolute;
+  z-index: 2;
+  bottom: 30%;
+  width: 50%;
+  left: 25%;
+  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
 }
 
 /*slider swiper*/
@@ -88,21 +102,25 @@
 }
 
 .swiper-container {
-  width: 100%;
+  width: 80%;
   margin-bottom: 7em;
   overflow: hidden;
 }
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 300px;
-  height: 300px;
 }
 
 .swiper-slide img {
   display: block;
   width: 100%;
   height: 500px;
+}
+
+/* Arrive de la vidieo*/
+
+.banner__video {
+  animation: move-up 2s 300ms both;
 }
 
 /* gestion de nuage*/
@@ -134,20 +152,6 @@
   z-index: 2;
 }
 
-#place .big_cloud {
-  height: 122px;
-  top: 70px;
-  right: 90px;
-  transform: translateX(var(--posX));
-}
-
-#place .little_cloud {
-  height: 55px;
-  top: 250px;
-  right: 500px;
-  transform: translateX(var(--posX));
-}
-
 /*Titre H2*/
 .FadeH2 {
   position: relative;
@@ -157,17 +161,51 @@
   animation-fill-mode: forwards;
 }
 
-#studio h2::after,
-#studio h2::before,
-.story h2::after,
-.story h2::before,
-.story__article::after,
-.story__article::before,
-#colophon::after,
-#colophon::before,
-.site-footer::after,
-.site-footer::before,
-ul::after,
-.Oscar-im {
-  animation: move-up 2s 300ms;
+.Oscar {
+  position: relative;
+  padding: 150px 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.Oscar-img {
+  height: 100%;
+}
+
+.Oscar__title h3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 3.2rem;
+  text-align: left;
+}
+
+.Oscar img {
+  height: 100%;
+}
+
+/* Section Oscar*/
+/* Suppression des fleurs du pieds de page pour le déplacer dans la nouvelle section- */
+.Oscar::before {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  left: 4em;
+  top: 0em;
+}
+
+.Oscar::after {
+  content: url("../images/orchid.png");
+  position: absolute;
+  right: -4em;
+  top: -3em;
+}
+
+.site-footer::before {
+  content: "";
+}
+.site-footer::after {
+  content: "";
 }
