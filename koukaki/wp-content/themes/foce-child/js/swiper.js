@@ -13,7 +13,7 @@ var swiper = new Swiper(".swiper-container", {
   direction: "horizontal",
   loop: true,
   autoplay: {
-    delay: 0, // Délai entre chaque diapositive en millisecondes (3 secondes dans cet exemple)
+    delay: 0,
   },
   speed: 2000,
 });

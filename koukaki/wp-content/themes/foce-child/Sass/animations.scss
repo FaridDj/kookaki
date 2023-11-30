@@ -54,19 +54,43 @@
 }
 
 /* Animation du titre H2*/
-@keyframes FadeH2 {
+
+@keyframes FadeH10 {
   0% {
     transform: translate3d(0, 100%, 0);
     opacity: 0;
   }
   100% {
     transform: translate3d(0, 0, 0);
-    opacity: 1;
-    visibility: visible;
   }
 }
 
-/* Slider en boucle*/
+.FadeH.active {
+  opacity: 1;
+
+  .FadeH1 {
+    animation: FadeH10 1s 300ms both;
+  }
+  .FadeH2 {
+    animation: FadeH10 2s 300ms both;
+  }
+}
+
+@keyframes cloud {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-700px);
+  }
+}
+
+.big_cloud.active {
+  animation: cloud 5s 300ms both;
+}
+&.little_cloud {
+  animation: cloud 3s 300ms both;
+}
 
 /*----------------FIN DES ANIMATIONS--------------------*/
 
@@ -86,24 +110,31 @@
 & .logo-img {
   position: absolute;
   z-index: 2;
-  bottom: 30%;
+  bottom: 40%;
   width: 50%;
   left: 25%;
   animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
 }
 
+.story h2::before,
+.story__article::before,
+.Oscar-img,
+.Oscar::after {
+  animation: move-up 2s 300ms both !important;
+}
+
 /*slider swiper*/
 
 .story #characters {
-  margin: 6em;
-  text-align: center;
   display: block !important;
   animation: move-up 2s 300ms;
 }
 
 .swiper-container {
-  width: 80%;
+  width: 100%;
+  height: 100%;
   margin-bottom: 7em;
+  margin-left: 25%;
   overflow: hidden;
 }
 .swiper-slide {
@@ -114,10 +145,10 @@
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 500px;
+  height: 200%;
 }
 
-/* Arrive de la vidieo*/
+/* Arrive de la video*/
 
 .banner__video {
   animation: move-up 2s 300ms both;
@@ -130,18 +161,16 @@
   animation: move-up 2s 300ms;
 }
 
-#place .big_cloud {
+.big_cloud {
   height: 122px;
   top: 70px;
   right: 90px;
-  transform: translateX(var(--posX));
 }
 
-#place .little_cloud {
+.little_cloud {
   height: 55px;
   top: 250px;
-  right: 500px;
-  transform: translateX(var(--posX));
+  right: 90px;
 }
 #place .big_cloud,
 #place .little_cloud {
@@ -153,12 +182,34 @@
 }
 
 /*Titre H2*/
-.FadeH2 {
+.FadeH {
+  display: flex;
+  justify-content: center;
   position: relative;
-  z-index: 1;
-  animation: FadeH2 2s ease-in-out 1s alternate;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+/* Section Oscar*/
+/* déplacer les fleurs dans la nouvelle section- */
+.Oscar::before {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  left: 4em;
+  top: 0em;
+}
+
+.Oscar::after {
+  content: url("../images/orchid.png");
+  position: absolute;
+  right: -4em;
+  top: -3em;
+}
+
+.site-footer::before {
+  content: "";
+}
+.site-footer::after {
+  content: "";
 }
 
 .Oscar {
@@ -187,25 +238,94 @@
   height: 100%;
 }
 
-/* Section Oscar*/
-/* Suppression des fleurs du pieds de page pour le déplacer dans la nouvelle section- */
-.Oscar::before {
-  content: url("../images/Sunflower.png");
-  position: absolute;
-  left: 4em;
-  top: 0em;
+/*------------- Menue Buger-------------*/
+
+/* main-navigation menu */
+.main-navigation {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: -100%;
+  background-color: #e8e8e8;
+  padding-top: 60px;
+  transition: left 0.5s ease;
 }
 
-.Oscar::after {
-  content: url("../images/orchid.png");
-  position: absolute;
-  right: -4em;
-  top: -3em;
+/* main-navigation menu links */
+.main-navigation a {
+  font-family: Roboto Mono;
+  font-size: 55px;
+  font-weight: 400;
+  line-height: 84px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #000000;
+  transition: 0.3s;
 }
 
-.site-footer::before {
-  content: "";
+.main-navigation a:hover {
+  color: #111;
+  text-shadow: 2px 5px 5px orange;
+  cursor: pointer;
 }
-.site-footer::after {
-  content: "";
+
+/* Active class */
+.main-navigation.active {
+  left: 0;
+}
+
+/* Close btn */
+.main-navigation .close {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.line {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: black;
+  border: 1px;
+  margin: 4px 0;
+}
+
+#openBtn {
+  margin-left: 24%;
+  margin-right: 10%;
+}
+#masthead {
+  display: flex;
+  justify-content: right;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background: #fff5e9;
+}
+.site-title {
+  font-family: Quicksand;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+#site-navigation ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+p {
+  margin-top: 5%;
+}
+
+.logo-img-mini {
+  width: 150px;
+  height: 90px;
+  margin-top: 0;
+  margin-bottom: 5%;
+  filter: drop-shadow(0px 0px 26px rgba(255, 92, 0, 0.6));
 }

@@ -7,7 +7,8 @@ function theme_enqueue_styles() {
     wp_enqueue_script( 'wp_swiper', get_stylesheet_directory_uri() . '/js/swiper.js', array(), '1.0', true);
     wp_enqueue_script( 'wp_custom', get_stylesheet_directory_uri() . '/js/custom.js', array(), '1.0', true);
     wp_enqueue_script( 'wp_bundle_swiper', get_stylesheet_directory_uri() . '/asset/swiper-bundle.min.js', array(), '1.0', false);
-
+    wp_enqueue_script( 'wp_Oscard', get_stylesheet_directory_uri() . '/Oscard.php' );
 }
 
 ?>
+

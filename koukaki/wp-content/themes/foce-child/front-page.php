@@ -11,7 +11,7 @@ get_header();
             <video class="banner__video" width="1440" autoplay="autoplay" muted="" loop="infinite">
       <source src="<?php echo get_stylesheet_directory_uri() . '/video/Studio+Koukaki-vidéo+header+sans+son.mp4'; ?> " type="video/mp4">
       
-      <img class="banner__logo" src="images/logo.png" alt="Logo fleurs d'oranger &amp; chats errants">
+      <img class="banner__logo" src="<?php echo get_stylesheet_directory_uri() . '/images/screenshot.png'; ?> " alt="Logo fleurs d'oranger &amp; chats errants">
 
     </video>
 
@@ -21,7 +21,8 @@ get_header();
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
-            
+            <article id="characters">
+            <h3><span class="characters_title ">Les personnages</span></h3>
             <?php
             $args = array(
                 'post_type' => 'characters',
@@ -35,8 +36,7 @@ get_header();
             ?>
             <!-- gestion du slider -->
 
-            <article id="characters">
-  <h3><span class="characters_title ">Les personnages</span></h3>
+
   
   <div class="swiper-container">
   
@@ -65,11 +65,12 @@ get_header();
                 </div>
 
  <!-- Mise en place des nuage -->
- <img class="big_cloud" src="<?php echo get_theme_file_uri() . '/images/big_cloud.png'; ?>"
+        
+      <img class="big_cloud" src="<?php echo get_theme_file_uri() . '/images/big_cloud.png'; ?>"
         alt="Gros nuage qui passe">
-      <img class="little_cloud"
-        src="<?php echo get_theme_file_uri() . '/images/little_cloud.png'; ?>"
+      <img class="little_cloud" src="<?php echo get_theme_file_uri() . '/images/little_cloud.png'; ?>"
          alt="Petit nuage qui passe">
+        
       <!-- =================== -->
 
 
@@ -78,7 +79,12 @@ get_header();
 
 
         <section id="studio">
-            <h2><div class="FadeH2">Studio Koukaki</div></h2>
+            <h2>
+            <div class="FadeH">
+                <div class="FadeH1">Studio</div>
+                <div class="FadeH2">&nbsp;Koukaki</div>
+            </div>    
+        </h2>
             <div>
                 <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>
                 <p>Avec une créativité et une capacité d’innovation mondialement reconnues, une expertise éditoriale et commerciale à la pointe de son industrie, le Studio Koukaki se positionne comme un acteur incontournable dans un marché en forte croissance. Koukaki construit chaque année de véritables succès et capitalise sur de puissantes marques historiques. Cette année, il vous présente “Fleurs d’oranger et chats errants”.</p>
@@ -88,10 +94,7 @@ get_header();
         <!-- image ceremonie des Oscars -->
 
     <section id="Oscar" class="Oscar">
-            <div class="Oscar-img">
-            <img src="<?php echo get_theme_file_uri() . '/images/Les personnages.png'; ?>" alt="Nomination aux Oscars 2022" ">
-           
-            </div>
+    <?php get_template_part( 'Oscard' ); ?>
     </section>
     
     </main><!-- #main -->

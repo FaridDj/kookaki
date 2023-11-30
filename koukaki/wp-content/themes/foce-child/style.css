@@ -12,6 +12,15 @@
   --rotate: 15s;
 }
 
+@keyframes rotate-flower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* rotation fleurs non stop*/
 .story__article::after,
 #studio h2::after,
@@ -23,15 +32,38 @@
 .Oscar::after,
 .site-footer ul::after,
 .modal ::after {
-  animation: move-up 3s 300ms both,
-    rotate-flower var(--rotate) 300ms linear infinite;
+  /*animation: move-up 3s 300ms both;
+  rotate-flower: var(--rotate) 300ms linear infinite;*/
+  animation: rotate-flower 15s infinite linear;
+}
+/* Ajustements pour qu'elles puissent tourner rond */
+/* Sunflower.png */
+.story h2::after,
+.site-footer::before {
+  width: 154px;
+  height: 154px;
 }
 
-@keyframes rotate-flower {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* random_flower.png */
+#studio h2::before {
+  width: 203px;
+  height: 203px;
+}
+
+/* flower.png */
+#studio h2::after {
+  width: 109px;
+  height: 109px;
+}
+
+/* orchid.png */
+.site-footer::after {
+  width: 173px;
+  height: 173px;
+}
+
+/* Hibiscus.png */
+.story__article::after {
+  width: 188px;
+  height: 188px;
 }

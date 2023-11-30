@@ -24,24 +24,38 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'foce' ); ?></a>
+	
 
 	<header id="masthead" class="site-header">
-		<nav id="site-navigation" class="main-navigation">
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-            
-
-            <ul>
+	
+    <a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
+   <div id="site-navigation" class="main-navigation">
+   
+        <a id="closeBtn" href="#" class="close">&times;</a>
+        <ul>
+        <img class="logo-img-mini" src="<?php echo get_stylesheet_directory_uri() . '/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
                 <li><a href="#story">Histoire</a></li>
                 <li><a href="#characters">Personnages</a></li>
-                <li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
                 <li><a href="#place">Lieu</a></li>
                 <li><a href="#studio">Studio Koukaki</a></li>
-            </ul>
+                <p>STUDIO KOUKAKI</p>
+              
 
-		</nav><!-- #site-navigation -->
+            </ul>
+         
+         
+            
+
+        </div>
+
+        <a href="#" id="openBtn" aria-controls="primary-menu" aria-expanded="false">
+                <span class="burger-icon">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+        </a>
+
+
+
+		<!-- #site-divigation -->
 	</header><!-- #masthead -->

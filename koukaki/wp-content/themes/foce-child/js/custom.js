@@ -1,8 +1,6 @@
-let posX = 0;
-let mouveCloud = false;
-
 const root = document.documentElement;
 
+// Écouteur d'événement pour le scroll
 window.addEventListener("scroll", () => {
   var vertical = -1;
   setInterval(function () {
@@ -13,10 +11,54 @@ window.addEventListener("scroll", () => {
       root.style.setProperty("--rotate", "15s");
     }
   }, 500);
-
-  // On bouge les 2 nuages en fonction du scroll
-  posX = Math.round(0 - (window.scrollY - place.offsetTop - 200));
-  if (posX <= 0 && posX > -400) {
-    root.style.setProperty("--posX", posX + "px");
-  }
 });
+
+// Fonction pour la translation horizontale au scroll
+function donneX() {
+  var donneX = document.querySelectorAll(".big_cloud");
+  for (var i = 0; i < donneX.length; i++) {
+    var windowWidth = window.innerWidth;
+    var elementLeft = donneX[i].getBoundingClientRect().bottom;
+    var elementVisible = 500;
+
+    if (elementLeft < windowWidth - elementVisible) {
+      donneX[i].classList.add("active");
+    } else {
+      donneX[i].classList.remove("active");
+    }
+  }
+}
+window.addEventListener("scroll", donneX);
+donneX();
+
+// Arriver du titre H2
+function reveal() {
+  var reveals = document.querySelectorAll(".FadeH");
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+window.addEventListener("scroll", reveal);
+reveal();
+
+//Menu burger
+var navigation = document.getElementById("site-navigation");
+var openBtn = document.getElementById("openBtn");
+var closeBtn = document.getElementById("closeBtn");
+
+openBtn.onclick = openNav;
+closeBtn.onclick = closeNav;
+
+function openNav() {
+  navigation.classList.add("active");
+}
+function closeNav() {
+  navigation.classList.remove("active");
+}
