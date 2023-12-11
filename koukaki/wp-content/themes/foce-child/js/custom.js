@@ -19,7 +19,7 @@ function donneX() {
   for (var i = 0; i < donneX.length; i++) {
     var windowWidth = window.innerWidth;
     var elementLeft = donneX[i].getBoundingClientRect().bottom;
-    var elementVisible = 500;
+    var elementVisible = 700;
 
     if (elementLeft < windowWidth - elementVisible) {
       donneX[i].classList.add("active");

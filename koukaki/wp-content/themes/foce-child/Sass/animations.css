@@ -1,0 +1,380 @@
+@charset "UTF-8";
+/* Animations du site */
+/*----Effets de flottaisons--Float elements */
+@keyframes float {
+  0% {
+    transform: translate3d(6px, 6px, 0);
+  }
+  12% {
+    transform: translate3d(0px, 6px, 0);
+  }
+  24% {
+    transform: translate3d(6px, -4px, 0);
+  }
+  36% {
+    transform: translate3d(6px, 0px, 0);
+  }
+  48% {
+    transform: translate3d(-4px, -6px, 0);
+  }
+  60% {
+    transform: translate3d(0px, -4px, 0);
+  }
+  72% {
+    transform: translate3d(-8px, 6px, 0);
+  }
+  84% {
+    transform: translate3d(-4px, 0px, 0);
+  }
+  100% {
+    transform: translate3d(6px, 6px, 0);
+  }
+}
+/*---Arrive des elements------*/
+@keyframes move-up {
+  0% {
+    transform: translateY(300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes move-down {
+  0% {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+/* Animation du titre H2*/
+@keyframes FadeH10 {
+  0% {
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.FadeH.active {
+  opacity: 1;
+}
+.FadeH.active .FadeH1 {
+  animation: FadeH10 1s 300ms both;
+}
+.FadeH.active .FadeH2 {
+  animation: FadeH10 2s 300ms both;
+}
+
+/*----------------FIN DES ANIMATIONS--------------------*/
+/* video avec logo devant*/
+.banner {
+  background-image: none;
+  display: inline-block;
+  position: relative;
+}
+.banner .banner__video {
+  z-index: 1;
+  margin-top: 0;
+  width: 100%;
+  animation: move-down 2s 300ms both;
+}
+
+.banner img {
+  margin-top: 4%;
+}
+
+.logo-img {
+  z-index: 2;
+  position: absolute;
+  height: 90vh width 50wh;
+  left: 25%;
+  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
+}
+
+/*slider swiper*/
+.story #characters {
+  display: block !important;
+  animation: move-up 2s 300ms;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 7em;
+  margin-left: 25%;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 200%;
+}
+
+/* Arrive de la video*/
+/* gestion de nuage*/
+.story #place {
+  position: relative;
+  background-image: url("../images/Studio_Koukaki-image_place.png");
+  animation: move-up 2s 300ms;
+}
+
+#place .big_cloud,
+#place .little_cloud {
+  position: absolute;
+  filter: blur(12px);
+  -webkit-filter: blur(12px);
+  -moz-filter: blur(12px);
+  z-index: 2;
+}
+
+.big_cloud {
+  height: 122px;
+  top: 70px;
+  right: 90px;
+}
+
+.little_cloud {
+  height: 55px;
+  top: 250px;
+  right: 90px;
+}
+
+@keyframes cloud {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-600px);
+  }
+}
+.big_cloud.active,
+.big_cloud.active + .little_cloud {
+  animation: cloud 5s 300ms both;
+}
+
+/*Titre H2*/
+.FadeH {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  opacity: 0;
+}
+
+/* Section Oscar*/
+/* déplacer les fleurs dans la nouvelle section- */
+.Oscar::before {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  left: 4em;
+  top: 0em;
+}
+
+.Oscar::after {
+  content: url("../images/orchid.png");
+  position: absolute;
+  right: -4em;
+  top: -3em;
+}
+
+.site-footer::before {
+  content: "";
+}
+
+.site-footer::after {
+  content: "";
+}
+
+.Oscar {
+  position: relative;
+  padding: 150px 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.Oscar__title h3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 3.2rem;
+  text-align: left;
+}
+
+.Oscar img {
+  height: 100%;
+}
+
+/*------------- Menue Buger-------------*/
+/* main-navigation menu */
+.main-navigation {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  left: -100%;
+  background-color: #e8e8e8;
+  padding-top: 60px;
+  transition: left 0.5s ease;
+}
+
+/* main-navigation menu links */
+.main-navigation a {
+  font-family: Roboto Mono;
+  font-size: 55px;
+  font-weight: 400;
+  line-height: 84px;
+  letter-spacing: 0em;
+  color: #000000;
+  transition: 0.3s;
+}
+.main-navigation a:hover {
+  text-shadow: 2px 5px 5px orange;
+  cursor: pointer;
+}
+.main-navigation a:hover a#openBtn {
+  display: none;
+}
+
+/* 
+/* Active class */
+/*.main-navigation.active {
+  left: 0;
+  top: 9%;
+  }
+
+  #openBtn {
+
+    margin-left: 24%;
+    margin-right: 10%;
+    }
+
+@mixin .main-navigation.($etat)
+left: 0;
+  top: 9%;
+@if $etat !=active {
+  #openBtn =hidden;
+}
+
+.main-navigation.close {
+
+  right: 10%;
+  font-size: 36px;
+}
+#closeBtn {
+
+    margin-left: 24%;
+    margin-right: 10%;
+  }
+*/
+.main-navigation.active {
+  left: 0;
+  top: 9%;
+}
+
+.line {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: black;
+  border: 1px;
+  margin: 4px 0;
+}
+
+#masthead {
+  display: flex;
+  justify-content: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background: #fff5e9;
+  z-index: 999;
+}
+
+.site-title {
+  border: none;
+  font-family: Quicksand;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-decoration: none;
+}
+
+#site-navigation ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 300px;
+  gap: 1em;
+}
+#site-navigation ul > .orchid::before {
+  content: url("../images/orchid.png");
+  position: absolute;
+  left: -4%;
+  top: 10%;
+  animation: rotate-flower 15s infinite linear;
+}
+#site-navigation ul > .sunflower::after {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  right: 20%;
+  top: 20%;
+  animation: rotate-flower 15s infinite linear;
+}
+#site-navigation ul > .flower::after {
+  content: url("../images/flower.png");
+  position: absolute;
+  left: 20%;
+  top: 70%;
+  animation: rotate-flower 15s infinite linear;
+}
+#site-navigation ul > .random_flower::before {
+  content: url("../images/Random flower.png");
+  position: absolute;
+  right: -2%;
+  top: 65%;
+  animation: rotate-flower 15s infinite linear;
+}
+#site-navigation ul > .jaakuna::after {
+  content: url("../images/Jaakuna.png");
+  position: absolute;
+  right: 20%;
+  bottom: 0%;
+}
+#site-navigation ul > .tawaneko::before {
+  content: url("../images/Kawaneko.png");
+  position: absolute;
+  left: 20%;
+  top: 30%;
+}
+#site-navigation ul > .tenshi::before {
+  content: url("../images/Tenshi.png");
+  position: absolute;
+  left: 30%;
+  bottom: 0%;
+}
+
+.logo-img-mini {
+  width: 150px;
+  height: 90px;
+  margin-top: 0;
+  margin-bottom: 5%;
+  filter: drop-shadow(0px 0px 26px rgba(255, 92, 0, 0.6));
+}
+
+p {
+  margin-top: 5%;
+}/*# sourceMappingURL=animations.css.map */
