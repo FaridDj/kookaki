@@ -30,8 +30,11 @@
 	<header id="masthead" class="site-header">
 	
     <a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-   <div id="site-navigation" class="main-navigation">
-         
+    
+    <div id="site-navigation" class="main-navigation">
+    <div class="Btn">
+        <a href="#" id="closeBtn" class="close" >&times;</a> 
+        </div>
         <ul>
         <div class="orchid"></div>
         <div class="sunflower"></div>
@@ -41,22 +44,20 @@
         <div class="tawaneko"></div> 
         <div class="tenshi"></div> 
         <div class="jaakuna"></div> 
-
-        
-        <a href="#" id="closeBtn" class="close" >&times;</a>       
+         
         <div><img class="logo-img-mini" src="<?php echo get_stylesheet_directory_uri() . '/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants"></div>
-
-        <li><a href="#story">Histoire</a></li>
-                <li><a href="#characters">Personnages</a></li>
-                <li><a href="#place">Lieu</a></li>
-                <li><a href="#studio">Studio Koukaki</a></li>
+       
+                <li><a href="#story" class="closeLink">Histoire</a></li>
+                <li><a href="#characters" class="closeLink">Personnages</a></li>
+                <li><a href="#place" class="closeLink">Lieu</a></li>
+                <li><a href="#studio" class="closeLink">Studio Koukaki</a></li>
                 <p>STUDIO KOUKAKI</p>
          
             </ul>
          </div>
        
         
-         <a href="#" id="openBtn" class="active" aria-controls="primary-menu" aria-expanded="false">
+         <a href="#" id="openBtn" class="active" >
          
                 <span class="burger-icon">
                 <span class="line"></span>

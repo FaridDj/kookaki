@@ -41,7 +41,11 @@
     transform: translateY(0);
   }
 }
-
+*::after,
+*::before {
+  animation: move-up 2s 300ms;
+}
+/*---Translation des nuages------*/
 @keyframes move-down {
   0% {
     transform: translateY(-300px);
@@ -114,7 +118,7 @@
   width: 100%;
   height: 100%;
   margin-bottom: 7em;
-  margin-left: 25%;
+  margin-left: 10%;
   overflow: hidden;
 }
 .swiper-slide {
@@ -229,12 +233,9 @@
   height: 100%;
   width: 100%;
   position: fixed;
-  z-index: 2;
   top: 0;
   left: -100%;
   background-color: #fff5e9;
-  padding-top: 60px;
-
   transition: left 0.5s ease;
 }
 .main-navigation ul {
@@ -249,8 +250,8 @@
 /* main-navigation menu links */
 .main-navigation a {
   font-family: Roboto Mono;
-  font-size: 55px;
-  font-weight: 400;
+  font-size: 40px;
+  font-weight: 100;
   line-height: 84px;
   letter-spacing: 0em;
   color: #000000;
@@ -262,30 +263,35 @@
     cursor: pointer;
   }
 }
-
+.Btn {
+  display: flex;
+  justify-content: right;
+  background-color: #ffd5a2;
+  height: 10%;
+}
 .main-navigation.active {
   left: 0;
-}
-
-.main-navigation .close {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
+  z-index: 1;
 }
 
 .line {
   display: block;
   width: 40px;
-  height: 1px;
+  height: 2px;
   background-color: black;
-  border: 1px;
+  border: 2px;
   margin: 4px 0;
+  text-decoration: none;
+}
+#closeBtn {
+  margin-left: 30%;
+  margin-right: 4%;
 }
 #openBtn {
   margin-left: 30%;
-  margin-right: 2%;
+  margin-right: 4%;
 }
+
 #masthead {
   display: flex;
   justify-content: right;
@@ -294,9 +300,6 @@
   background-color: #ffd5a2;
 }
 
-.site-header {
-  background-color: #ffd5a2;
-}
 .site-title {
   border: none;
   font-family: Quicksand;
@@ -307,6 +310,7 @@
   text-align: left;
   text-decoration: none;
   z-index: 3;
+  background-color: #ffd5a2;
 }
 
 .orchid::before {
@@ -342,6 +346,7 @@
   position: absolute;
   right: 20%;
   bottom: 0%;
+  animation: float 8s 2s infinite ease-in-out;
 }
 .tawaneko::before {
   content: url("../images/Kawaneko.png");
@@ -349,6 +354,7 @@
   left: 20%;
   top: 30%;
   object-fit: cover;
+  animation: float 7s 2s infinite ease-in-out;
 }
 .tenshi::before {
   content: url("../images/Tenshi.png");
@@ -357,6 +363,7 @@
   bottom: 0%;
   height: 109px;
   width: 98px;
+  animation: float 6s 2s infinite ease-in-out;
 }
 
 .logo-img-mini {
@@ -365,8 +372,13 @@
   margin-top: 0;
   margin-bottom: 5%;
   filter: drop-shadow(0px 0px 26px rgba(255, 92, 0, 0.6));
+  animation: float 6s 3s infinite ease-in-out;
 }
 
 p {
   margin-top: 5%;
+}
+
+.site-footer ul::after {
+  bottom: -32.5em;
 }

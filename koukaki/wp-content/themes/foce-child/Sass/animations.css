@@ -40,6 +40,12 @@
     transform: translateY(0);
   }
 }
+*::after,
+*::before {
+  animation: move-up 2s 300ms;
+}
+
+/*---Translation des nuages------*/
 @keyframes move-down {
   0% {
     transform: translateY(-300px);
@@ -106,7 +112,7 @@
   width: 100%;
   height: 100%;
   margin-bottom: 7em;
-  margin-left: 25%;
+  margin-left: 10%;
   overflow: hidden;
 }
 
@@ -121,7 +127,6 @@
   height: 200%;
 }
 
-/* Arrive de la video*/
 /* gestion de nuage*/
 .story #place {
   position: relative;
@@ -223,82 +228,75 @@
   height: 100%;
   width: 100%;
   position: fixed;
+  top: 0;
   left: -100%;
-  background-color: #e8e8e8;
-  padding-top: 60px;
+  background-color: #fff5e9;
   transition: left 0.5s ease;
+}
+
+.main-navigation ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* main-navigation menu links */
 .main-navigation a {
   font-family: Roboto Mono;
-  font-size: 55px;
-  font-weight: 400;
+  font-size: 40px;
+  font-weight: 100;
   line-height: 84px;
   letter-spacing: 0em;
   color: #000000;
   transition: 0.3s;
+  display: block;
 }
 .main-navigation a:hover {
   text-shadow: 2px 5px 5px orange;
   cursor: pointer;
 }
-.main-navigation a:hover a#openBtn {
-  display: none;
+
+.Btn {
+  display: flex;
+  justify-content: right;
+  background-color: #ffd5a2;
+  height: 10%;
 }
 
-/* 
-/* Active class */
-/*.main-navigation.active {
-  left: 0;
-  top: 9%;
-  }
-
-  #openBtn {
-
-    margin-left: 24%;
-    margin-right: 10%;
-    }
-
-@mixin .main-navigation.($etat)
-left: 0;
-  top: 9%;
-@if $etat !=active {
-  #openBtn =hidden;
-}
-
-.main-navigation.close {
-
-  right: 10%;
-  font-size: 36px;
-}
-#closeBtn {
-
-    margin-left: 24%;
-    margin-right: 10%;
-  }
-*/
 .main-navigation.active {
   left: 0;
-  top: 9%;
+  z-index: 1;
 }
 
 .line {
   display: block;
   width: 40px;
-  height: 1px;
+  height: 2px;
   background-color: black;
-  border: 1px;
+  border: 2px;
   margin: 4px 0;
+  text-decoration: none;
+}
+
+#closeBtn {
+  margin-left: 30%;
+  margin-right: 4%;
+}
+
+#openBtn {
+  margin-left: 30%;
+  margin-right: 4%;
 }
 
 #masthead {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   padding-top: 2%;
   padding-bottom: 2%;
-  background: #fff5e9;
-  z-index: 999;
+  background-color: #ffd5a2;
 }
 
 .site-title {
@@ -310,61 +308,68 @@ left: 0;
   letter-spacing: -0.02em;
   text-align: left;
   text-decoration: none;
+  z-index: 3;
+  background-color: #ffd5a2;
 }
 
-#site-navigation ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  height: 300px;
-  gap: 1em;
-}
-#site-navigation ul > .orchid::before {
+.orchid::before {
   content: url("../images/orchid.png");
   position: absolute;
   left: -4%;
   top: 10%;
   animation: rotate-flower 15s infinite linear;
 }
-#site-navigation ul > .sunflower::after {
+
+.sunflower::after {
   content: url("../images/Sunflower.png");
   position: absolute;
   right: 20%;
   top: 20%;
   animation: rotate-flower 15s infinite linear;
 }
-#site-navigation ul > .flower::after {
+
+.flower::after {
   content: url("../images/flower.png");
   position: absolute;
   left: 20%;
   top: 70%;
   animation: rotate-flower 15s infinite linear;
 }
-#site-navigation ul > .random_flower::before {
+
+.random_flower::before {
   content: url("../images/Random flower.png");
   position: absolute;
   right: -2%;
   top: 65%;
   animation: rotate-flower 15s infinite linear;
 }
-#site-navigation ul > .jaakuna::after {
+
+.jaakuna::after {
   content: url("../images/Jaakuna.png");
   position: absolute;
   right: 20%;
   bottom: 0%;
+  animation: float 8s 2s infinite ease-in-out;
 }
-#site-navigation ul > .tawaneko::before {
+
+.tawaneko::before {
   content: url("../images/Kawaneko.png");
   position: absolute;
   left: 20%;
   top: 30%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  animation: float 7s 2s infinite ease-in-out;
 }
-#site-navigation ul > .tenshi::before {
+
+.tenshi::before {
   content: url("../images/Tenshi.png");
   position: absolute;
   left: 30%;
   bottom: 0%;
+  height: 109px;
+  width: 98px;
+  animation: float 6s 2s infinite ease-in-out;
 }
 
 .logo-img-mini {
@@ -373,8 +378,13 @@ left: 0;
   margin-top: 0;
   margin-bottom: 5%;
   filter: drop-shadow(0px 0px 26px rgba(255, 92, 0, 0.6));
+  animation: float 6s 3s infinite ease-in-out;
 }
 
 p {
   margin-top: 5%;
+}
+
+.site-footer ul::after {
+  bottom: -32.5em;
 }/*# sourceMappingURL=animations.css.map */

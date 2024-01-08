@@ -47,18 +47,23 @@ function reveal() {
 }
 window.addEventListener("scroll", reveal);
 reveal();
-
-//Menu burger
+// Menu burger
 var navigation = document.getElementById("site-navigation");
 var openBtn = document.getElementById("openBtn");
 var closeBtn = document.getElementById("closeBtn");
+var closeLink = document.querySelectorAll(".closeLink");
 
 openBtn.onclick = openNav;
 closeBtn.onclick = closeNav;
+
+closeLink.forEach(function (link) {
+  link.onclick = closeNav;
+});
 
 function openNav() {
   navigation.classList.add("active");
 }
 function closeNav() {
   navigation.classList.remove("active");
+  closeBtn.innerHTML = "&times;";
 }
