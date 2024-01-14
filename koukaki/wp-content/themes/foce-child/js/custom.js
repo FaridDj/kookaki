@@ -67,3 +67,18 @@ function closeNav() {
   navigation.classList.remove("active");
   closeBtn.innerHTML = "&times;";
 }
+
+// parallax vidéo
+
+document.addEventListener("DOMContentLoaded", function () {
+  var video = document.querySelector(".banner__video");
+  var logo = document.querySelector(".parallax");
+
+  video.addEventListener("play", function () {
+    logo.style.transform = "translate(-50%, 100%)"; // Faites descendre le logo
+  });
+
+  video.addEventListener("pause", function () {
+    logo.style.transform = "translate(-50%, -50%)"; // Revenez à la position d'origine
+  });
+});

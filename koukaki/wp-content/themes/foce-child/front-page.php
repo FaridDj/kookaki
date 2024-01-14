@@ -7,7 +7,7 @@ get_header();
         <section class="banner">
         
         
-        <img class="logo-img" src="<?php echo get_stylesheet_directory_uri() . '/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+        <div class="parallax"><img class="logo-img" src="<?php echo get_stylesheet_directory_uri() . '/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants"></div>
             <video class="banner__video" width="1440" poster="<?php echo get_stylesheet_directory_uri() . '/images/screenshot2.png'; ?> " autoplay="autoplay" muted="" loop="infinite">
       <source src="<?php echo get_stylesheet_directory_uri() . '/video/Studio+Koukaki-vidéo+header+sans+son.mp4'; ?> " type="video/mp4">
       
