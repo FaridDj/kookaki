@@ -30,6 +30,7 @@
     transform: translate3d(6px, 6px, 0);
   }
 }
+}
 
 /*---Arrive des elements------*/
 @keyframes move-up {
@@ -83,40 +84,34 @@
 /*----------------FIN DES ANIMATIONS--------------------*/
 
 /* video avec logo devant*/
-
 .banner {
-  background-image: none;
-  display: inline-block;
   position: relative;
-
-  &__video {
-    z-index: 0;
-    margin-top: 0;
-    width: 100%;
-    animation: move-down 2s 300ms both;
-  }
+  object-fit: contain;
+  height: 800px;
+  background-image: none;
 }
+
+.banner__video {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  min-width: 1440px !important;  
+  animation: move-down 2s 300ms both;
+}
+
 .banner img {
-  margin-top: 4%;
-  overflow: hidden;
+  animation: move-up 2s 300ms both;
 }
-.logo-img {
-  z-index: 2;
-  position: absolute;
-  height: 70vh;
-  width: 50wh;
-  left: 75%;
 
-  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
+.logo-img{
+  position: sticky;
+  top: 80px;
+  z-index: 10;
+  opacity: 1;
+  
+
 }
-.parallax {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2; /* Mettez le logo au-dessus de la vidéo */
-  transition: transform 0.5s ease; /* Animation de l'effet de parallaxe */
-}
+
 /*slider swiper*/
 
 .story #characters {
@@ -305,8 +300,8 @@
 #masthead {
   display: flex;
   justify-content: right;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
   background-color: #ffd5a2;
 }
 

@@ -68,17 +68,19 @@ function closeNav() {
   closeBtn.innerHTML = "&times;";
 }
 
-// parallax vidéo
+var s = skrollr.init();
 
+// parallax vidéo
+/*
 document.addEventListener("DOMContentLoaded", function () {
   var video = document.querySelector(".banner__video");
   var logo = document.querySelector(".parallax");
 
   video.addEventListener("play", function () {
-    logo.style.transform = "translate(-50%, 100%)"; // Faites descendre le logo
+    logo.style.transform = "translate(-50%, 100%)";
   });
 
   video.addEventListener("pause", function () {
-    logo.style.transform = "translate(-50%, -50%)"; // Revenez à la position d'origine
+    logo.style.transform = "translate(-50%, -50%)";
   });
-});
+});*/

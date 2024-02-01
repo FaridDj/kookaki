@@ -12,7 +12,7 @@
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 	<met
     a charset="<?php bloginfo( 'charset' ); ?>">
