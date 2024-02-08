@@ -32,6 +32,6 @@
 .Oscar::after,
 .site-footer ul::after,
 .modal ::after {
-  animation: move-up 2s 300ms, rotate-flower var(--rotate) 300ms linear infinite;
+  animation: rotate-flower var(--rotate) 300ms linear infinite, move-up 2s 300ms !important;
   line-height: 0;
 }

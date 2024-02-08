@@ -67,20 +67,3 @@ function closeNav() {
   navigation.classList.remove("active");
   closeBtn.innerHTML = "&times;";
 }
-
-var s = skrollr.init();
-
-// parallax vidéo
-/*
-document.addEventListener("DOMContentLoaded", function () {
-  var video = document.querySelector(".banner__video");
-  var logo = document.querySelector(".parallax");
-
-  video.addEventListener("play", function () {
-    logo.style.transform = "translate(-50%, 100%)";
-  });
-
-  video.addEventListener("pause", function () {
-    logo.style.transform = "translate(-50%, -50%)";
-  });
-});*/

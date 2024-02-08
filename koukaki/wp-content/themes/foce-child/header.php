@@ -22,7 +22,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	
@@ -64,8 +64,5 @@
                 <span class="line"></span>
                 <span class="line"></span>
         </a>
-            
-
-
-		<!-- #site-divigation -->
-	</header><!-- #masthead -->
+        
+	</header>

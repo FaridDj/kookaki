@@ -121,10 +121,13 @@
   border: 3px solid black;
 }
 
+.story {
+  animation: move-up 2s 300ms;
+}
+
 /*slider swiper*/
 .story #characters {
   display: block !important;
-  animation: move-up 2s 300ms;
 }
 
 .swiper-container {
@@ -377,7 +380,7 @@
   left: 20%;
   top: 30%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   animation: float 7s 2s infinite ease-in-out;
 }
 
@@ -406,4 +409,4 @@ p {
 
 .site-footer ul::after {
   bottom: -32.5em;
-}/*# sourceMappingURL=animations.css.map */
+} /*# sourceMappingURL=animations.css.map */

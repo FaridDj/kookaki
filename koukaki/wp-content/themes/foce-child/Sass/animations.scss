@@ -30,12 +30,11 @@
     transform: translate3d(6px, 6px, 0);
   }
 }
-}
 
 /*---Arrive des elements------*/
 @keyframes move-up {
   0% {
-    transform: translateY(300px);
+    transform: translateY(600px);
     opacity: 0;
   }
   100% {
@@ -43,9 +42,6 @@
   }
 }
 
-.story {
-  animation: move-up 2s 300ms;
-}
 /*---Translation des nuages------*/
 @keyframes move-down {
   0% {
@@ -95,28 +91,30 @@
   position: absolute;
   bottom: 0px;
   left: 0px;
-  min-width: 1440px !important;  
+  min-width: 1440px !important;
   animation: move-down 2s 300ms both;
 }
 
-.banner img {
-  animation: move-up 2s 300ms both;
-}
-
-.logo-img{
+.logo-img {
   position: sticky;
   top: 80px;
   z-index: 10;
   opacity: 1;
-  
-
+  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
+}
+.story h2::before,
+.story__article::before,
+h3,
+#characters,
+.big-cloud,
+.little_cloud {
+  animation: move-up 2s 300ms;
 }
 
 /*slider swiper*/
 
 .story #characters {
   display: block !important;
-  animation: move-up 2s 300ms;
 }
 
 .swiper-container {
@@ -141,7 +139,6 @@
 .story #place {
   position: relative;
   background-image: url("../images/Studio_Koukaki-image_place.png");
-  animation: move-up 2s 300ms;
 }
 
 #place .big_cloud,

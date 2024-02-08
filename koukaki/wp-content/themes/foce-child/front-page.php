@@ -7,23 +7,17 @@ get_header();
 
     <main id="primary" class="site-main">
         <section class="banner">
-        
-
-
     <img class="logo-img" src="<?php echo get_stylesheet_directory_uri() . '/images/logo.png'; ?>">
- 
-
             <video class="banner__video" width="1440" poster="<?php echo get_stylesheet_directory_uri() . '/images/screenshot2.png'; ?> " autoplay="autoplay" muted="" loop="infinite">
       <source src="<?php echo get_stylesheet_directory_uri() . '/video/Studio+Koukaki-vidéo+header+sans+son.mp4'; ?> " type="video/mp4">
             </video>
-            
-      
-
              </section>
-        <section id="story" class="story">
-            <h2>L'histoire</h2>
+        <section id="" class="story">
+           <h2>L'histoire</h2>
             <article id="" class="story__article">
+            
                 <p><?php echo get_theme_mod('story'); ?></p>
+           
             </article>
             <article id="characters">
             <h3><span class="characters_title">Les personnages</span></h3>
@@ -39,7 +33,7 @@ get_header();
             
             ?>
             <!-- gestion du slider -->
-  
+            
   <div class="swiper-container">
   
     <div class="swiper-wrapper">
@@ -61,10 +55,10 @@ get_header();
 </article>
             
             <article id="place">
-                <div>
+               
                     <h3>Le Lieu</h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
-                </div>
+               
 
  <!-- Mise en place des nuage -->
  <div class="cloud">
@@ -79,7 +73,7 @@ get_header();
 
 
         <section id="studio">
-            <h2>
+            <h2> 
             <div class="FadeH">
                 <div class="FadeH1">Studio</div>
                 <div class="FadeH2">&nbsp;Koukaki</div>
@@ -97,7 +91,6 @@ get_header();
     <?php get_template_part( 'Oscard' ); ?>
     </section>
     
-    </main><!-- #main -->
-      
+    </main>
 <?php
 get_footer();
